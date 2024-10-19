@@ -15,7 +15,6 @@ export async function getAzureChatCompletion(
   const scope = "https://cognitiveservices.azure.com/.default";
   const azureADTokenProvider = getBearerTokenProvider(credential, scope);
 
-  const deployment = "Your Azure OpenAI deployment";
   const apiVersion = "2024-04-01-preview";
   const options = { azureADTokenProvider, deployment, apiVersion }
   const client = new AzureOpenAI(endpoint, options);
