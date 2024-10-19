@@ -33,10 +33,13 @@ export async function getSimpleChatCompletion(
     }
   ]
   const completion = await openai.chat.completions.create({
-    messages,
-    model,
-    temperature,
-    max_tokens
+    messages: messages,
+    model: model,
+    temperature: temperature,
+    max_tokens: max_tokens,
+    response_format: { 
+      type: "json_object" 
+    }
   })
 
   return completion
